@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      #java: openjdk8
+      android: 29
+    commands:
+      - echo Install started on `date`
+      - echo $ANDROID_PIPELINE_NAME
+      - echo "------------------------ JAVA HOME ------------------------"
+      - echo $JAVA_HOME
+      - echo "------------------------ JAVA VERSION ------------------------"
+      - java -version
+      - echo "------------------------ JAVA VERSION ------------------------"
+      - javac -version
+      - echo "------------------------ Android Home ------------------------"
+      - echo $ANDROID_HOME
+      - . $CODEBUILD_SRC_DIR/android_code_build_env_variables
+      - cd $ANDROID_HOME/tools/bin
+      - yes | ./sdkmanager --licenses > /dev/null
+  build:
+    commands:
+      - chmod +x ./gradlew
+      - ./gradlew clean
+      - ./gradlew assemble --stacktrace
+
