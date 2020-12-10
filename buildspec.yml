@@ -26,4 +26,4 @@ phases:
       - ls -la
       - chmod +x ./gradlew
       - ./gradlew clean
-      - ./gradlew assemble --stacktrace
+      - ./gradlew assembleDebug --stacktrace
