@@ -20,7 +20,10 @@ phases:
       - yes | ./sdkmanager --licenses > /dev/null
   build:
     commands:
+      - echo "------------------------ PATH_TO_ANDROID_REPO ------------------------"
+      - cd $CODEBUILD_SRC_DIR/
+      - pwd
+      - ls -la
       - chmod +x ./gradlew
       - ./gradlew clean
       - ./gradlew assemble --stacktrace
-
