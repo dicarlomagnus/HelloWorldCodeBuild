@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 
+
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var crashButton : Button
