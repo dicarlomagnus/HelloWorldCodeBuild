@@ -33,6 +33,11 @@ jobs:
           command:
             # ./gradlew assembleDebug
             ./gradlew assembleDebug
+      - store_artifacts:
+          path: app/build/reports/debug
+          destination: debug
+      - store_test_results:
+          path: app/build/test-results/debug
 
 workflows:
   # Below is the definition of your workflow.
