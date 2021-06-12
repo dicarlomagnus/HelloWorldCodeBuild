@@ -52,6 +52,7 @@ jobs:
           command:
             # ./gradlew assembleDebug
             ./gradlew assembleDebug
+            find . -name "*.apk" 2>/dev/null
       - store_artifacts:
           path: app/build/outputs/apk/debug/app-debug.apk
       - store_test_results:
