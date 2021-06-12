@@ -97,11 +97,12 @@ workflows:
             branches:
               only:
                 - circleci-project-setup
+                - circleci
       - Release:
           filters:
             branches:
               only:
-                - circleci
+                - main
               
       
         
